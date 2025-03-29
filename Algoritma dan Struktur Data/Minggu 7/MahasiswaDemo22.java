@@ -5,7 +5,8 @@ public class MahasiswaDemo22 {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Masukkan Jumlah Mahasiswa : ");
-        int jum = 5;
+        int jum = input.nextInt();
+        input.nextLine();
 
         MahasiswaBerprestasi22 mhslist = new MahasiswaBerprestasi22(jum);
 

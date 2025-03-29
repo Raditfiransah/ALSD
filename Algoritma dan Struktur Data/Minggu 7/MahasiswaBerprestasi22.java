@@ -76,7 +76,7 @@ public class MahasiswaBerprestasi22 {
             mid = (left + right)/2;
             if (mhs[mid].ipk == cari){
                 return mid;
-            }else if(mhs[mid].ipk>cari){
+            }else if(mhs[mid].ipk<cari){
                 return findBinarySearch(cari,left,mid-1);
             }else{
                 return findBinarySearch(cari,mid + 1, right);
