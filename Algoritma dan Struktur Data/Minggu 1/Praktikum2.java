@@ -25,5 +25,6 @@ public class Praktikum2 {
             }
         }
     
+        input.close();
     }
 }

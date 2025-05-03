@@ -51,5 +51,7 @@ public class DosenDemo22 {
         System.out.println("Menggunakan Binary Searching:");
         System.out.println("====================================");
         listDosen.cariUsiaDosen(usia);
+
+        input.close();
     }
 }

@@ -55,5 +55,7 @@ public class Praktikum1 {
         System.out.printf("Nilai Akhir: %.2f\n", nilaiAkhir);
         System.out.println("Nilai Huruf: " + nilaiHuruf);
         System.out.println("Keterangan: " + status);
+
+        input.close();
     }
 }

@@ -62,6 +62,9 @@ public class Praktikum3 {
         }
         double ipkSemester = totalBobot / totalSks; 
         System.out.print("IP Semester: " + ipkSemester);
+
+        input.close();
+        inputt.close();
         
     }
 }

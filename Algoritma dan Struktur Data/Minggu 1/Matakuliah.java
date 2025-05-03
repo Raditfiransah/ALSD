@@ -45,6 +45,8 @@ public class Matakuliah {
             // Tampilkan hasil
             System.out.println("Mahasiswa ke-" + (i + 1) + " memiliki rata-rata nilai = " + rata + " dan dinyatakan: " + hasilKelulusan);
             System.out.println();
+
+            scanner.close();
         }
     }
 }
