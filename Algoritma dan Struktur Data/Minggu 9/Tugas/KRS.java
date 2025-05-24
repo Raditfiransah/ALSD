@@ -1,26 +1,30 @@
-package P2Jobsheet10;
+package Tugas;
 
 import java.util.Scanner;
 
-public class LayananAkademik {
+public class KRS {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        AntrianLayanan antrian = new AntrianLayanan(5);
+        QueueKRS antrian = new QueueKRS(10);
         int pilihan;
 
         do {
             System.out.println("=== Layanan Akademik ===");
             System.out.println("1. Tambah Mahasiswa ke Antrian");
-            System.out.println("2. Layani Mahasiswa");
-            System.out.println("3. Lihat Mahasiswa Terdepan");
-            System.out.println("4. Lihat Semua Antrian");
-            System.out.println("5. jumlah Mahasiswa Dalam Antrian");
+            System.out.println("2. Proses KRS Mahasiswa");
+            System.out.println("3. Kosongkan antrian");
+            System.out.println("4. Lihat Mahasiswa Terdepan");
+            System.out.println("5. Lihat Mahasiswa Akhir");
+            System.out.println("6. Lihat Semua Antrian");
+            System.out.println("7. Jumlah Mahasiswa Dalam Antrian");
+            System.out.println("8. Jumlah Mahasiswa Sudah KRS");
+            System.out.println("9. Jumlah Mahasiswa Belum KRS");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = input.nextInt();
             input.nextLine(); 
 
-            switch (pilihan) {
+            switch (pilihan){
                 case 1:
                     System.out.print("Masukkan NIM: ");
                     String nim = input.nextLine();
@@ -34,23 +38,34 @@ public class LayananAkademik {
                     antrian.tambahAntrian(mhs);
                     break;
                 case 2:
-                    Mahasiswa dilayani = antrian.layaniMahasiswa();
+                    Mahasiswa[] dilayani = antrian.prosesKrs();
                     if (dilayani != null) {
                         System.out.println("Melayani Mahasiswa: ");
-                        dilayani.tampilkanData();
+                        for (Mahasiswa mahasiswa : dilayani) {
+                            mahasiswa.tampilkanData();
+                        }
                     }
                     break;
                 case 3:
-                    antrian.lihatTerdepan();
+                    antrian.kosongkanAntrian();
                     break;
                 case 4:
-                    antrian.tampilkanSmeua();
+                    antrian.lihatTerdepan();
                     break;
                 case 5:
-                    System.out.println("Jumlah Mahasiswa dalam Antrian: " + antrian.size);
+                    antrian.lihatAkhir();
                     break;
                 case 6:
-                    antrian.lihatAkhir();
+                    antrian.lihatSemua();
+                    break;
+                case 7:
+                    System.out.println("Jumlah Mahasiswa dalam Antrian: " + antrian.jumlahAntrian());
+                    break;
+                case 8:
+                    System.out.println("Jumlah Mahasiswa Sudah KRS: " + antrian.jumlahSudahKrs);
+                    break;
+                case 9:
+                    System.out.println("Jumlah Mahasiswa Belum KRS: " + antrian.jumlahBelumKrs());
                     break;
                 case 0:
                     System.out.println("Keluar dari program.");
@@ -58,7 +73,7 @@ public class LayananAkademik {
                 default:
                     System.out.println("Pilihan tidak valid. Silakan coba lagi.");
             }
-        }while (pilihan != 0);
+        } while (pilihan != 0);
         input.close();
     }
 }
