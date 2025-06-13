@@ -1,3 +1,5 @@
+// Buat class Book dalam Book.java
+
 public class Book {
     public String title, isbn;
 

@@ -1,3 +1,5 @@
+// Buat class Customer dalam Customer.java
+
 public class Customer {
     public int id;
     public String name;
