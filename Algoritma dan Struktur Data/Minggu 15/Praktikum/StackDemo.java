@@ -4,8 +4,6 @@ import java.util.Stack;
 
 public class StackDemo {
     public static void main(String[] args) {
-        // Buat class Book dalam Book.java
-        Stack<Book> bookStack = new Stack<>();
         
         // Buat class Book dengan atribut ISBN dan title
         Book book1 = new Book("1234", "The Republic");
